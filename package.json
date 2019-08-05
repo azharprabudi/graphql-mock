@@ -1,5 +1,5 @@
 {
-  "name": "apollo-mock",
+  "name": "graphql-mock",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,5 +8,22 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.6.1",
+    "apollo-server": "^2.8.1",
+    "apollo-server-cache-redis": "^1.1.1",
+    "axios": "^0.19.0",
+    "graphql": "^14.4.2",
+    "graphql-tools": "^4.0.5",
+    "inversify": "^5.0.1",
+    "reflect-metadata": "^0.1.13"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/graphql": "^14.2.3",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
+  }
 }
