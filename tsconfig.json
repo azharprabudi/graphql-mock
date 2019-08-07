@@ -9,8 +9,11 @@
     "removeComments": true,
     "allowJs": true,
     "lib": ["dom", "es6"],
-    "types": ["reflect-metadata"]
+    "types": ["reflect-metadata", "node"],
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
-  "include": ["./src/**/*"],
+  "include": ["./src/**/*", "server.js"],
   "exclude": ["node_modules"]
 }
