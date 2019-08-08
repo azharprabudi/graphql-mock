@@ -1,20 +1,21 @@
-import {
-  Resolver,
-  FieldResolver,
-  Root,
-  ResolverInterface,
-  Arg
-} from "type-graphql";
+import { Resolver, FieldResolver, Arg, Query } from "type-graphql";
 import PostType from "../@types/post";
 import { injectable, inject } from "inversify";
 import PostServiceInterface from "../service/post/interface";
 import ServiceID from "../identifiers/service";
-import CommentType from "../@types/comment";
 
-@Resolver(_ => PostType)
+@injectable()
+@Resolver()
 export default class PostResolver {
-  @FieldResolver()
-  comments(@Arg("post") post: PostType) {
-    return "";
+  @inject(ServiceID.Post) service: PostServiceInterface;
+
+  @Query(_ => [PostType])
+  async posts(): Promise<PostType[]> {
+    return await this.service.findAll();
+  }
+
+  @Query(_ => PostType)
+  async post(@Arg("postId") postId: number): Promise<PostType> {
+    return await this.service.findById(postId);
   }
 }

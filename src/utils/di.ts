@@ -8,7 +8,6 @@ import PostServiceInterface from "../service/post/interface";
 import HTTPClientID from "../identifiers/httpclient";
 import APIID from "../identifiers/api";
 import PostResolver from "../resolvers/post";
-import RootResolver from "../resolvers/index";
 import ServiceID from "../identifiers/service";
 
 const container = new Container();
@@ -23,7 +22,6 @@ container
   .bind<PostServiceInterface>(ServiceID.Post)
   .to(PostService)
   .inSingletonScope();
-container.bind<RootResolver>(RootResolver).toSelf();
-// container.bind<PostResolver>(PostResolver).toSelf();
+container.bind<PostResolver>(PostResolver).toSelf();
 
 export default container;

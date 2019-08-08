@@ -8,7 +8,7 @@ import PostResolver from "./resolvers/post";
 const main: () => Promise<ApolloServer> = async (): Promise<ApolloServer> => {
   const { typeDefs, resolvers } = await buildTypeDefsAndResolvers({
     container,
-    resolvers: [RootResolvers, PostResolver]
+    resolvers: RootResolvers
   });
   const schema = makeExecutableSchema({ typeDefs, resolvers });
 

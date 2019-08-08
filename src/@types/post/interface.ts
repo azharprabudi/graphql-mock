@@ -1,5 +1,4 @@
-import { InterfaceType, Field, Int, ID, Arg } from "type-graphql";
-import CommentTypeInterface from "../comment/interface";
+import { InterfaceType, Field, Int, ID } from "type-graphql";
 
 @InterfaceType()
 abstract class PostTypeInterface {
@@ -8,7 +7,7 @@ abstract class PostTypeInterface {
   })
   userId: number;
 
-  @Field(_ => ID, {
+  @Field(_ => Int, {
     nullable: false
   })
   id: number;
@@ -18,9 +17,6 @@ abstract class PostTypeInterface {
 
   @Field({ nullable: true })
   body: string;
-
-  @Field()
-  comments: any;
 }
 
 export default PostTypeInterface;
