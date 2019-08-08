@@ -1,11 +1,10 @@
-import Post from "../../models/post";
-import PostType from "../../@types/post";
-import CommentType from "../../@types/comment";
+import PostTypeQuery from "../../@types/post/query";
+import CommentTypeQuery from "../../@types/comment/query";
 
 interface PostServiceInterface {
-  findAll: () => Promise<PostType[]>;
-  findById: (id: number) => Promise<PostType>;
-  findCommentsByPostId: (postId: number) => Promise<CommentType[]>;
+  findAll: () => Promise<PostTypeQuery[]>;
+  findById: (id: number) => Promise<PostTypeQuery>;
+  findCommentsByPostId: (postId: number) => Promise<CommentTypeQuery[]>;
 }
 
 export default PostServiceInterface;

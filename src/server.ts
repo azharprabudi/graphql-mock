@@ -3,7 +3,6 @@ import { buildTypeDefsAndResolvers } from "type-graphql";
 import { ApolloServer, makeExecutableSchema } from "apollo-server";
 import RootResolvers from "./resolvers";
 import container from "./utils/di";
-import PostResolver from "./resolvers/post";
 
 const main: () => Promise<ApolloServer> = async (): Promise<ApolloServer> => {
   const { typeDefs, resolvers } = await buildTypeDefsAndResolvers({
