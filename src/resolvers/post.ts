@@ -15,7 +15,7 @@ export default class PostResolver {
   }
 
   @Query(_ => PostType)
-  async post(@Arg("postId") postId: number): Promise<PostType> {
-    return await this.service.findById(postId);
+  async post(@Arg("id") id: number): Promise<PostType> {
+    return await this.service.findById(id);
   }
 }
